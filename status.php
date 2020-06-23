@@ -1,4 +1,5 @@
-<?php
+<p><a href="https://orca.kittyjosh.com">orcaweb 2020</a></p>
+<hr><?php
 $nonce = $_GET['q'];
 $e = $_GET['e'];
 function error($message=null) {
