@@ -1,4 +1,5 @@
 <?php
+$process_count = shell_exec('ps -e o pid,ppid,pgid,cmd | grep "orca " | grep -v grep | wc -l');
   if(!empty($_FILES['uploaded_file']))
   {
     $nonce = md5(time());
@@ -27,6 +28,8 @@
   <title>Upload your orca input file</title>
 </head>
 <body>
+  <h1>Upload your orca input file, provide a valid email address</h1>
+  <h2<?php if ($process_count>=3) echo " style=\"color:Tomato;\""; ?>>Running orca process count: <?php echo $process_count; ?></h2>
   <form enctype="multipart/form-data" action="create.php" method="POST">
     <h2>Upload your orca input file</h2>
     <p>Your email address (orca result will be emailed to you):
